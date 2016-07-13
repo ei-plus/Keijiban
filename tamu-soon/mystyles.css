@@ -1,0 +1,27 @@
+
+  body {background-color:deepskyblue;}
+
+#container{
+    background:white;
+    width:390px;
+    margin:20px auto ;
+    border:4px double;
+    padding:35px  15px 40px  15px;
+    border-radius:5px;
+    box-shadow:3px 3px 3px blue;
+}
+
+img{
+  position:relative;
+  top:70px;
+  border-radius:400px;
+  border:3px solid white;
+  box-shadow:0px 0px 20px black ;
+}
+
+h4{
+  line-height:0.3em
+}
+p{
+  line-height:0.3em
+}

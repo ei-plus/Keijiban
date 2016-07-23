@@ -3,16 +3,20 @@ body {background-color:deepskyblue;}
 #container{
     background:white;
     width:390px;
-    margin:20px auto ;
+    margin:0 auto;
     border:4px double;
     padding:35px  15px 40px  15px;
     border-radius:5px;
     box-shadow:3px 3px 3px blue;
 }
 
-img{
+.myphoto{
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+
   position:relative;
-  top:70px;
+  top:55px;
   border-radius:400px;
   border:3px solid white;
   box-shadow:0px 0px 20px black ;

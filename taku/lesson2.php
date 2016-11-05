@@ -78,3 +78,6 @@ echo $obj->classes_detail[0]->term ;
 foreach ($obj->teachers as $value ){
   echo $value->teacher_name;
 }
+
+
+

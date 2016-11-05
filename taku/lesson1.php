@@ -5,11 +5,11 @@ if($s%2==0 and $s%3!==0){
   echo"<span style='color:red'>$s</span>";
 }elseif($s%6==0){
   echo"<span style='color:green'>$s</span>";
-            }
-                else{
-                  echo"<span style='color:blue'>$s</span>";
-                }
-                };
+}else{
+  echo"<span style='color:blue'>$s</span>";
+}
+
+};
                 
                 
                 

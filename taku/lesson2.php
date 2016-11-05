@@ -70,21 +70,11 @@ $obj = json_decode($json);
 var_dump($obj);
 //問1:授業名をechoで表示
 echo $obj->class_name;
-//問2:授業の学期をechoで表示
 
+//問2:授業の学期をechoで表示
 echo $obj->classes_detail[0]->term ;
 //問3:担当教師(全員)をechoで表示
 //ヒント:foreach使う！
-
 foreach ($obj->teachers as $value ){
-    echo $value->teacher_name;
+  echo $value->teacher_name;
 }
-?>
-
-
-
-
-
-
-
-

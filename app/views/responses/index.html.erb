@@ -1,0 +1,13 @@
+<html>
+<head>
+<body>
+<div class="responses">
+
+<% @responses.each do |response| %>
+<%= response.user_id %>
+<%= response.body %>
+<% end %>
+</div>
+</body>
+</head>
+</html>

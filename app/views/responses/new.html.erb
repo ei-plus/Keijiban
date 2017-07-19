@@ -1,0 +1,26 @@
+<html>
+<head>
+<body>
+<div>
+<%= form_for [@topic, @response] do |f| %>
+           <!--form_forの引数がが配列になっている。なぜこうなっているかというと、１回ネスとされていて、/products/:product_id/reviews/newを見て、一つ目の:product_idに@product、二つ目のreviewsに@review を入れる。そうなると、パスがproducts/2/reviewsとなる-->
+           <!--newアクションによってこの画面が開かれ、このformが送られると、createアクションが呼び出される。 -->
+          <div style="margin: 8px 0">
+            <%= f.label :name, style: { 'margin-right' => 8 } %>
+            <%= f.text_field :name, placeholder: 'お名前', value: '' %>
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.text_area :body, placeholder: 'レスを書いてね！', style: 'width: 100%;height: 300px;' %>
+          </div>
+          <div class="row">
+            <div class="col10 push1">
+              <%= button_tag type: "submit", class: "btn btn--block" do %>
+              投稿する<i class="icon-arrow-right"></i>
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+</div>
+</body>
+</head>
+</html>

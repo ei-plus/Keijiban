@@ -4,7 +4,7 @@
 <div class="topics">
 
 <% @topics.each do |topic| %>
-<%= topic.title %>
+<%= link_to "#{topic.title}", topic_responses_path(topic.id), method: :get %>
 <% end %>
 </div>
 

@@ -5,6 +5,15 @@
 
 <% @topics.each do |topic| %>
 <%= link_to "#{topic.title}", topic_responses_path(topic.id), method: :get %>
+<p>レス数: <%= topic.responses.length %> 勢い:
+<% if @responses[topic.id].present? %>
+<%= @responses[topic.id] %>
+<% else %>
+0
+<% end %>
+</p>
+
+
 <% end %>
 </div>
 

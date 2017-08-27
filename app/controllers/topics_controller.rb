@@ -1,6 +1,8 @@
 class TopicsController < ApplicationController
+  require 'date'
   def index
-    @topics = Topic.all
+    @topics = Topic.all.order('created_at DESC')
+    @responses = Response.where(created_at: Date.yesterday.beginning_of_day..Date.tomorrow.end_of_day).group(:topic_id).count
   end
 
   def new

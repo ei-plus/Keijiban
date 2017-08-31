@@ -10,6 +10,7 @@ class TopicsController < ApplicationController
 
   def create
     Topic.create(topic_params)
+    redirect_to :index
   end
 
   private

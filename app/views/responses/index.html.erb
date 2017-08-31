@@ -1,11 +1,14 @@
 <html>
 <head>
 <body>
+<%= link_to "トピック一覧", "/" %>
+<%= link_to "書き込む",  new_topic_response_path(@topic.id), method: :get %>
 <div class="responses">
-
 <% @responses.each do |response| %>
+<p>
 <%= response.user_id %>
 <%= response.body %>
+</p>
 <% end %>
 </div>
 </body>

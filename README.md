@@ -20,56 +20,70 @@ xcode-select --install
 
 >Homebrewのインストール
 cd  #ホームディレクトリに移動 <br>
-pwd #ホームディレクトリにいるかどうか確認
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  #コマンドを実行
+pwd #ホームディレクトリにいるかどうか確認<br>
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  #コマンドを実行<br>
 
 >Homebrewのアップデート
-brew update
+brew update<br>
+
 >rbenv ruby-buildのインストール
-brew install rbenv ruby-build
+brew install rbenv ruby-build <br>
+
 >rbenvを使えるように、.bash_profileへ書き込み
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile <br>
+
 >.bash_profileの変更の更新
-source ~/.bash_profile
+source ~/.bash_profile <br>
+
 >irbの日本語の対応
-brew install readline
+brew install readline <br>
+
 >readlineを使えるようにする
-brew link readline --force
+brew link readline --force <br>
+
 >readlineを利用してrubyのインストール
-RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)"
-rbenv install 2.3.1
+RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)" <br>
+rbenv install 2.3.1 <br>
+
 >rubyの起動準備
-rbenv rehash
+rbenv rehash <br>
+
 >利用するrubyの選択
-rbenv global 2.3.1
+rbenv global 2.3.1 <br>
+
 >rubyのバージョン確認
-ruby -v
-2.3.1となっていることを確認
+ruby -v <br>
+2.3.1となっていることを確認 <br>
+
 >mysqlのインストール
-brew install mysql56 mysql
+brew install mysql56 mysql <br>
+
 >mysqlの自動起動設定
-mkdir ~/Library/LaunchAgents 
-ln -sfv /usr/local/opt/mysql\@5.6/*.plist ~/Library/LaunchAgents
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql\@5.6.plist 
+mkdir ~/Library/LaunchAgents <br>
+ln -sfv /usr/local/opt/mysql\@5.6/*.plist ~/Library/LaunchAgents <br>
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql\@5.6.plist <br>
+
 >bundlerのインストール
-gem install bundler
+gem install bundler <br>
+
 >rubyonrailsのインストール
-gem install rails --version='5.0.4'
-rbenv rehash
+gem install rails --version='5.0.4' <br>
+rbenv rehash <br>
+
 >railsのバージョン確認
-rails -v
+rails -v <br>
 
 
 
->cd #ホームディレクトリへ移動
->pwd #今いるディレクトリの確認
->cd Desktop #Desktopディレクトリへ移動
->mkdir A+plus #A+plus用フォルダを作る
->cd A+plus #A+plus用フォルダへ移動
->git clone https://github.com/ei-plus/testRepo.git #掲示板のソースコードをダウンロード
->cd testRepo
->bundle install #掲示板アプリを起動するのに必要なもののインストール
->rails s #サーバ起動。
+>cd #ホームディレクトリへ移動 <br>
+>pwd #今いるディレクトリの確認 <br>
+>cd Desktop #Desktopディレクトリへ移動 <br>
+>mkdir A+plus #A+plus用フォルダを作る <br>
+>cd A+plus #A+plus用フォルダへ移動 <br>
+>git clone https://github.com/ei-plus/testRepo.git #掲示板のソースコードをダウンロード <br>
+>cd testRepo <br>
+>bundle install #掲示板アプリを起動するのに必要なもののインストール <br>
+>rails s #サーバ起動。 <br>
 >ブラウザのURLにhttp://localhost:3000と打ってエンター
 
 

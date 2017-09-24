@@ -17,10 +17,12 @@ https://tsuchikazu.net/mac_rail_setup/
 
 >コマンドラインツールのインストール
 xcode-select --install
+
 >Homebrewのインストール
 cd  #ホームディレクトリに移動
 pwd #ホームディレクトリにいるかどうか確認
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  #コマンドを実行
+
 >Homebrewのアップデート
 brew update
 >rbenv ruby-buildのインストール

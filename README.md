@@ -15,62 +15,62 @@ https://tsuchikazu.net/mac_rail_setup/
 
 
 
->コマンドラインツールのインストール
-xcode-select --install
+>コマンドラインツールのインストール<br>
+xcode-select --install <br>
 
->Homebrewのインストール
+>Homebrewのインストール<br>
 cd  #ホームディレクトリに移動 <br>
 pwd #ホームディレクトリにいるかどうか確認<br>
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  #コマンドを実行<br>
 
->Homebrewのアップデート
+>Homebrewのアップデート <br>
 brew update<br>
 
->rbenv ruby-buildのインストール
+>rbenv ruby-buildのインストール <br>
 brew install rbenv ruby-build <br>
 
->rbenvを使えるように、.bash_profileへ書き込み
+>rbenvを使えるように、.bash_profileへ書き込み <br>
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile <br>
 
->.bash_profileの変更の更新
+>.bash_profileの変更の更新 <br>
 source ~/.bash_profile <br>
 
->irbの日本語の対応
+>irbの日本語の対応 <br>
 brew install readline <br>
 
->readlineを使えるようにする
+>readlineを使えるようにする <br>
 brew link readline --force <br>
 
->readlineを利用してrubyのインストール
+>readlineを利用してrubyのインストール <br>
 RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)" <br>
 rbenv install 2.3.1 <br>
 
->rubyの起動準備
+>rubyの起動準備 <br>
 rbenv rehash <br>
 
->利用するrubyの選択
+>利用するrubyの選択 <br>
 rbenv global 2.3.1 <br>
 
->rubyのバージョン確認
+>rubyのバージョン確認 <br>
 ruby -v <br>
 2.3.1となっていることを確認 <br>
 
->mysqlのインストール
+>mysqlのインストール <br>
 brew install mysql56 mysql <br>
 
->mysqlの自動起動設定
+>mysqlの自動起動設定 <br>
 mkdir ~/Library/LaunchAgents <br>
 ln -sfv /usr/local/opt/mysql\@5.6/*.plist ~/Library/LaunchAgents <br>
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql\@5.6.plist <br>
 
->bundlerのインストール
+>bundlerのインストール <br>
 gem install bundler <br>
 
->rubyonrailsのインストール
+>rubyonrailsのインストール <br>
 gem install rails --version='5.0.4' <br>
 rbenv rehash <br>
 
->railsのバージョン確認
+>railsのバージョン確認 <br>
 rails -v <br>
 
 

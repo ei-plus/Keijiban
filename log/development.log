@@ -4375,3 +4375,291 @@ Processing by ResponsesController#index as HTML
 Completed 200 OK in 41ms (Views: 36.7ms | ActiveRecord: 0.6ms)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT GET_LOCK('1126215771046479330', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateFavorites (20170831074720)
+  [1m[35m (44.8ms)[0m  [1m[35mCREATE TABLE `favorites` (`id` int AUTO_INCREMENT PRIMARY KEY, `topic_id` int, `user_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170831074720')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('1126215771046479330')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW CREATE TABLE `favorites`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `responses`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'responses'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `topics`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'topics'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+Started GET "/" for 127.0.0.1 at 2017-10-08 17:29:03 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (62.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by TopicsController#index as HTML
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-07 00:00:00' AND '2017-10-09 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (5.8ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (3.9ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (1.7ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (72.6ms)
+Completed 200 OK in 380ms (Views: 303.6ms | ActiveRecord: 44.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-09 14:49:03 +0900
+Processing by TopicsController#index as HTML
+  [1m[35m (244.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-08 00:00:00' AND '2017-10-10 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (13.7ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (15.8ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (3.5ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (3.6ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (40.2ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (1.2ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.7ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (226.1ms)
+Completed 200 OK in 1213ms (Views: 732.3ms | ActiveRecord: 322.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-09 14:56:28 +0900
+Processing by TopicsController#index as HTML
+  [1m[35m (9.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-08 00:00:00' AND '2017-10-10 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (5.2ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (1.8ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (1.2ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (1.1ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 168ms (Views: 142.0ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 22:15:49 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (23.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by TopicsController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-31 00:00:00' AND '2017-11-02 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (5.4ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (1.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (85.0ms)
+Completed 200 OK in 379ms (Views: 334.2ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/topics/1/responses" for 127.0.0.1 at 2017-11-01 22:15:52 +0900
+Processing by ResponsesController#index as HTML
+  Parameters: {"authenticity_token"=>"1OOaf7Ks+Bm17hb8AK92B/hJoK8BVF870MkBlXo5SWb6Z3F6xgqZTeC72XXh2x3Rxm4mBPH/vEfwKbDXqXJsCg==", "topic_id"=>"1"}
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT  `topics`.* FROM `topics` WHERE `topics`.`id` = 1 LIMIT 1[0m
+  Rendering responses/index.html.erb within layouts/application
+  [1m[36mResponse Load (0.5ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered responses/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 25.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 22:15:54 +0900
+Processing by TopicsController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-31 00:00:00' AND '2017-11-02 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 51ms (Views: 43.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/topics/3/responses" for 127.0.0.1 at 2017-11-01 22:15:55 +0900
+Processing by ResponsesController#index as HTML
+  Parameters: {"authenticity_token"=>"dX5HKRMXAJ4RkVwTJKLXQXsoC/RULN3PFIZFKo/I/WRb+qwsZ7FhykTEk5rF1ryXRQ+NX6SHPrM0ZvRoXIPYCA==", "topic_id"=>"3"}
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT  `topics`.* FROM `topics` WHERE `topics`.`id` = 3 LIMIT 1[0m
+  Rendering responses/index.html.erb within layouts/application
+  [1m[36mResponse Load (0.6ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  Rendered responses/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 27ms (Views: 23.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 22:15:57 +0900
+Processing by TopicsController#index as HTML
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-31 00:00:00' AND '2017-11-02 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.5ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 84ms (Views: 70.5ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/topics/3/responses" for 127.0.0.1 at 2017-11-01 22:15:58 +0900
+Processing by ResponsesController#index as HTML
+  Parameters: {"authenticity_token"=>"Z13w12aEMvvu4rvI0jnVfepkf+5uJPObkBFl7bvJHaVJ2RvSEiJTr7u3dEEzTb6r1EP5RZ6PEOew8dSvaII4yQ==", "topic_id"=>"3"}
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT  `topics`.* FROM `topics` WHERE `topics`.`id` = 3 LIMIT 1[0m
+  Rendering responses/index.html.erb within layouts/application
+  [1m[36mResponse Load (0.5ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  Rendered responses/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 41ms (Views: 36.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 22:15:59 +0900
+Processing by TopicsController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-31 00:00:00' AND '2017-11-02 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (1.3ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (0.5ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.5ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.5ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 61ms (Views: 52.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 23:41:05 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (4.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by TopicsController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-31 00:00:00' AND '2017-11-02 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (70.4ms)
+Completed 200 OK in 371ms (Views: 322.3ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 23:41:19 +0900
+Processing by TopicsController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-31 00:00:00' AND '2017-11-02 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 56ms (Views: 49.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 23:41:34 +0900
+Processing by TopicsController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-31 00:00:00' AND '2017-11-02 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 62ms (Views: 55.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/topics/6/responses" for 127.0.0.1 at 2017-11-01 23:42:53 +0900
+Processing by ResponsesController#index as HTML
+  Parameters: {"authenticity_token"=>"AugxuX6Ii0KDtTa9UTB/eZN7gotQ3COWVhC5DhmZBmssbNq8Ci7qFtbg+TSwRBSvrVwEIKB3wOp28AhMytIjBw==", "topic_id"=>"6"}
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT  `topics`.* FROM `topics` WHERE `topics`.`id` = 6 LIMIT 1[0m
+  Rendering responses/index.html.erb within layouts/application
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  Rendered responses/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 72ms (Views: 63.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 23:42:54 +0900
+Processing by TopicsController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-31 00:00:00' AND '2017-11-02 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (1.2ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.6ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.5ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 65ms (Views: 52.8ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 23:43:15 +0900
+Processing by TopicsController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-31 00:00:00' AND '2017-11-02 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 69ms (Views: 63.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 23:43:31 +0900
+Processing by TopicsController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-31 00:00:00' AND '2017-11-02 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 75ms (Views: 68.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 23:44:34 +0900
+Processing by TopicsController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-31 00:00:00' AND '2017-11-02 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (0.5ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 50ms (Views: 43.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 23:45:46 +0900
+Processing by TopicsController#index as HTML
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, `responses`.`topic_id` AS responses_topic_id FROM `responses` WHERE (`responses`.`created_at` BETWEEN '2017-10-31 00:00:00' AND '2017-11-02 23:59:59') GROUP BY `responses`.`topic_id`[0m
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT `topics`.* FROM `topics` ORDER BY created_at DESC[0m
+  [1m[36mResponse Load (0.4ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 6[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 5[0m
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 4[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 3[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 2[0m
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT `responses`.* FROM `responses` WHERE `responses`.`topic_id` = 1[0m
+  Rendered topics/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 59ms (Views: 50.2ms | ActiveRecord: 5.4ms)
+
+
